@@ -3,14 +3,17 @@ package com.sexton.cassandra.pagination.example.models;
 import com.datastax.driver.core.utils.UUIDs;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
+import org.springframework.data.cassandra.core.mapping.Column;
 
 import java.util.UUID;
 
-@Table("users")
+@Table("users_test_demo")
 public class User {
     @PrimaryKey
     private UUID id;
+    @Column("first_name")
     private String firstName;
+    @Column("last_name")
     private String lastName;
 
     public User(final String firstName, final String lastName) {
